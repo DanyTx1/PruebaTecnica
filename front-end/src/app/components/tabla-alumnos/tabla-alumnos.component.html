@@ -1,0 +1,40 @@
+<div class="border rounded-3 border-dark mt-2 p-4 me-3">
+
+  <!-- Encabezado con selector y botón -->
+  <div class="d-flex align-items-center mb-3">
+    <h5 class="me-3 mb-0">Búsqueda por Grado</h5>
+    <select class="form-select w-auto me-2" [(ngModel)]="gradoSeleccionado">
+      <option value="1">Primero Primaria</option>
+      <option value="2">Segundo Primaria</option>
+      <option value="3">Tercero Primaria</option>
+      <option value="4">Cuarto Primaria</option>
+      <option value="5">Quinto Primaria</option>
+      <option value="6">Sexto Primaria</option>
+    </select>
+    <button class="btn btn-success" (click)="buscarAlumnos()">Buscar</button>
+  </div>
+
+  <!-- Tabla -->
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre del alumno</th>
+      <th>Fecha de nacimiento</th>
+      <th>Grado</th>
+      <th>Sección</th>
+      <th>Nombre del padre</th>
+      <th>Nombre de la madre </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let alumno of alumnos">
+      <td>{{ alumno.nombre_alumno }}</td>
+      <td>{{ alumno.fecha_nacimiento }}</td>
+      <td>{{ alumno.grado | grado }}</td>
+      <td>{{ alumno.seccion }}</td>
+      <td>{{ alumno.nombre_padre }}</td>
+      <td>{{ alumno.nombre_madre }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

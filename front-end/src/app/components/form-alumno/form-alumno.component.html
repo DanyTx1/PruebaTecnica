@@ -1,0 +1,54 @@
+<div class="border rounded-3 border-dark mt-2 p-4 ms-2">
+  <form [formGroup]="alumnoForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label>Nombre del alumno</label>
+          <input type="text" class="form-control" formControlName="nombre_alumno">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label>Fecha de nacimiento</label>
+          <input type="date" class="form-control" formControlName="fecha_nacimiento">
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6">
+        <div class="form-group">
+          <label>Nombre del padre</label>
+          <input type="text" class="form-control" formControlName="nombre_padre">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label>Nombre de la madre</label>
+          <input type="text" class="form-control" formControlName="nombre_madre">
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-6">
+        <div class="form-group">
+          <label>Grado</label>
+          <select class="form-select" formControlName="grado">
+            <option value="1">Primero Primaria</option>
+            <option value="2">Segundo Primaria</option>
+            <option value="3">Tercero Primaria</option>
+            <option value="4">Cuarto Primaria</option>
+            <option value="5">Quinto Primaria</option>
+            <option value="6">Sexto Primaria</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label>Sección</label>
+          <input type="text" class="form-control" formControlName="seccion">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!alumnoForm.valid">Guardar</button>
+  </form>
+</div>
